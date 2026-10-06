@@ -3,6 +3,14 @@ name: Collect reviewed public briefings
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect.yml'
+      - 'data/collection-*.json'
+      - 'scripts/collector.py'
+      - 'collector-template/publish.py'
+      - 'tests/test_collector*.py'
   schedule:
     - cron: '7,22,37,52 * * * *'
 

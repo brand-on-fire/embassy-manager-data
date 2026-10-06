@@ -3,6 +3,7 @@ import copy
 from datetime import timedelta
 import hashlib
 import importlib.util
+from io import BytesIO
 import json
 import os
 from pathlib import Path
@@ -217,6 +218,18 @@ class PublicationTests(unittest.TestCase):
         data = json.loads((ROOT / 'data/collection-policy.json').read_text())
         collector.validate_policy(data)
         publisher.storage_guard(ROOT / 'collector-template/example', 0, self.root / 'empty')
+
+    def test_publication_context_requires_main_and_fresh_public_visibility(self):
+        context = {'GITHUB_ACTIONS': 'true', 'GITHUB_REPOSITORY': publisher.REPOSITORY, 'GITHUB_REF': 'refs/heads/main'}
+        public = {'full_name': publisher.REPOSITORY, 'private': False, 'visibility': 'public', 'size': 12}
+        for event in ('schedule', 'workflow_dispatch', 'push'):
+            with patch.dict(os.environ, {**context, 'GITHUB_EVENT_NAME': event}, clear=True), patch.object(publisher, 'urlopen', return_value=BytesIO(json.dumps(public).encode())):
+                self.assertEqual(publisher.check_context(), 12 * 1024)
+        for changes in ({'GITHUB_REF': 'refs/heads/public-data'}, {'GITHUB_REF': 'refs/heads/other'}, {'GITHUB_EVENT_NAME': 'pull_request'}, {'GITHUB_ACTIONS': 'false'}):
+            with patch.dict(os.environ, {**context, 'GITHUB_EVENT_NAME': 'push', **changes}, clear=True), patch.object(publisher, 'urlopen', side_effect=AssertionError('No network allowed')):
+                with self.assertRaisesRegex(ValueError, 'restricted'): publisher.check_context()
+        with patch.dict(os.environ, {**context, 'GITHUB_EVENT_NAME': 'push'}, clear=True), patch.object(publisher, 'urlopen', return_value=BytesIO(json.dumps({**public, 'private': True}).encode())):
+            with self.assertRaisesRegex(ValueError, 'visibility'): publisher.check_context()
 
 
 class GitTransportTests(unittest.TestCase):

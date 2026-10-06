@@ -28,7 +28,7 @@ def allowed(path):
 
 
 def check_context():
-    if os.environ.get("GITHUB_ACTIONS") != "true" or os.environ.get("GITHUB_REPOSITORY") != REPOSITORY or os.environ.get("GITHUB_EVENT_NAME") not in ("schedule", "workflow_dispatch"):
+    if os.environ.get("GITHUB_ACTIONS") != "true" or os.environ.get("GITHUB_REPOSITORY") != REPOSITORY or os.environ.get("GITHUB_EVENT_NAME") not in ("schedule", "workflow_dispatch", "push") or os.environ.get("GITHUB_REF") != "refs/heads/main":
         raise ValueError("Publication is restricted to the approved public GitHub workflow")
     request = Request("https://api.github.com/repos/" + REPOSITORY, headers={"Accept": "application/vnd.github+json", "User-Agent": "EmbassyManagerPublicCollector/1"})
     with urlopen(request, timeout=10) as response:
