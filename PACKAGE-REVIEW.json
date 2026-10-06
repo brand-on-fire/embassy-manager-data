@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "activation": "disabled",
+  "files": [
+    {
+      "path": "scripts/collector.py",
+      "bytes": 33139,
+      "sha256": "dddf4e84f8c21022da6d6ac9fa2f7791196b4fde259a8fb9a7c3e4ed34d8909f"
+    },
+    {
+      "path": "collector-template/publish.py",
+      "bytes": 8232,
+      "sha256": "a13e906aec4e065b7deccfafdb03a786fb539ac3042932229b987e2859dfe996"
+    },
+    {
+      "path": "collector-template/collect.yml.disabled",
+      "bytes": 1672,
+      "sha256": "8b054163abaed5696bc105273a50b81133b15951d9ed21af2e3b11612110db87"
+    },
+    {
+      "path": "data/collection-policy.json",
+      "bytes": 3881,
+      "sha256": "edef89288c8e9cd9c16cbeb583a7319326c078579f4ff35003016d95d498fed1"
+    },
+    {
+      "path": "data/collection-admissions.json",
+      "bytes": 2167,
+      "sha256": "13e5baa4eaf3c11cae70c2a6b810f21d7813d895dbcac76fb38db6050d67ac6a"
+    },
+    {
+      "path": "tests/test_collector.py",
+      "bytes": 14809,
+      "sha256": "898a83590cb76023762dbbd3f2599dc210c13088a8342d76baa8ee54772d3428"
+    },
+    {
+      "path": "tests/test_collector_publication.py",
+      "bytes": 15706,
+      "sha256": "a756337b2f867a732b9e6f02242b44d467a7b37b438a2dc45a5f7ceeb5ff3733"
+    },
+    {
+      "path": "docs/COLLECTOR.md",
+      "bytes": 13383,
+      "sha256": "40c0a2c3a83c90638c07142ca508f71ef86fd2284d720b2bb303c52101d21c4f"
+    },
+    {
+      "path": "collector-template/example/manifest.json",
+      "bytes": 269,
+      "sha256": "cccd880cdae1e118c9594d7b0ccfcc7477d55a95093519a4ca80bebadbf00154"
+    },
+    {
+      "path": "collector-template/example/editions/tokyo/166fdfd897d14668c6d05cffa3752100b73d817d8c31fb29d2a0b59bf0bfadcf.json",
+      "bytes": 1492,
+      "sha256": "166fdfd897d14668c6d05cffa3752100b73d817d8c31fb29d2a0b59bf0bfadcf"
+    }
+  ]
+}

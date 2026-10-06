@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-06T00:13:24Z",
+  "activation": "disabled",
+  "sources": [
+    {
+      "id": "travel-advisories",
+      "url": "https://travel.state.gov/_res/rss/TAsTWs.xml",
+      "responseBytes": 614413,
+      "completeResponseSha256": "715b0bddea8508db61d8abef1bead001fd02c05cfdf3965e6335630259a82ef7",
+      "itemCount": 223,
+      "earliestPublication": "2023-06-27",
+      "latestPublication": "2026-09-15",
+      "admission": {
+        "anonymousPublicRead": true,
+        "permittedFeedUse": true,
+        "verifiedAt": "2026-10-06",
+        "accessEvidenceUrl": "https://travel.state.gov/content/travel/en/rss.html",
+        "rightsEvidenceUrl": "https://travel.state.gov/content/travel/en/copyright-disclaimer.html",
+        "scope": "Public travel-advisory feed supplied for readers and aggregators. Government-authored facts and short reviewed paraphrases only; no photographs or third-party works."
+      }
+    },
+    {
+      "id": "federal-register",
+      "url": "https://www.govinfo.gov/rss/fr.xml",
+      "responseBytes": 113878,
+      "completeResponseSha256": "616302b65e5365e34f318bba667030e5d50231f28e3c8ec0153b70e0e144cf8f",
+      "itemCount": 99,
+      "earliestPublication": "2026-06-16T17:31:00Z",
+      "latestPublication": "2026-10-05T18:14:00Z",
+      "admission": {
+        "anonymousPublicRead": true,
+        "permittedFeedUse": true,
+        "verifiedAt": "2026-10-06",
+        "accessEvidenceUrl": "https://www.govinfo.gov/feeds",
+        "rightsEvidenceUrl": "https://www.govinfo.gov/about/policies",
+        "scope": "Public Federal Register feed linked by the publishing agency. Discovery metadata only until the complete underlying document receives editorial review. Feed updates can reflect reprocessing."
+      }
+    }
+  ],
+  "reviewLimitations": [
+    "The reviewed Japanese item is a historical issuance, not new daily news.",
+    "No Federal Register article has been admitted for dashboard prose.",
+    "Additional posts and source-specific role mappings require reviewed entries before publication.",
+    "Feed disappearance is a review signal, not automatic evidence of withdrawal."
+  ]
+}

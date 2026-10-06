@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "enabled": false,
+  "allowedHosts": [
+    "travel.state.gov",
+    "www.govinfo.gov"
+  ],
+  "maxSourcesPerRun": 2,
+  "maxResponseBytes": 1048576,
+  "timeoutSeconds": 10,
+  "staleAfterHours": 48,
+  "publication": {
+    "repository": "brand-on-fire/embassy-manager-data",
+    "branch": "public-data",
+    "maxPayloadBytes": 10485760,
+    "maxRepositoryBytes": 209715200,
+    "editionVersions": 3,
+    "sourceVersions": 2
+  },
+  "acronyms": {},
+  "sources": [
+    {
+      "id": "travel-advisories",
+      "url": "https://travel.state.gov/_res/rss/TAsTWs.xml",
+      "nonBillable": true,
+      "parser": "rss-atom",
+      "dateOnlyPublication": true,
+      "pollMinutes": 360,
+      "admission": {
+        "anonymousPublicRead": true,
+        "permittedFeedUse": true,
+        "verifiedAt": "2026-10-06",
+        "accessEvidenceUrl": "https://travel.state.gov/content/travel/en/rss.html",
+        "rightsEvidenceUrl": "https://travel.state.gov/content/travel/en/copyright-disclaimer.html",
+        "scope": "Public travel-advisory feed supplied for readers and aggregators. Government-authored facts and short reviewed paraphrases only; no photographs or third-party works."
+      }
+    },
+    {
+      "id": "federal-register",
+      "url": "https://www.govinfo.gov/rss/fr.xml",
+      "nonBillable": true,
+      "parser": "rss-atom",
+      "metadataOnly": true,
+      "pollMinutes": 360,
+      "admission": {
+        "anonymousPublicRead": true,
+        "permittedFeedUse": true,
+        "verifiedAt": "2026-10-06",
+        "accessEvidenceUrl": "https://www.govinfo.gov/feeds",
+        "rightsEvidenceUrl": "https://www.govinfo.gov/about/policies",
+        "scope": "Public Federal Register feed linked by the publishing agency. Discovery metadata only until the complete underlying document receives editorial review. Feed updates can reflect reprocessing."
+      }
+    }
+  ],
+  "posts": [
+    {
+      "id": "tokyo",
+      "country": "Japan",
+      "timezone": "Asia/Tokyo",
+      "roleIds": [
+        "capital-tokyo-ambassador",
+        "dcm",
+        "capital-chief-of-staff"
+      ],
+      "sourceIds": [
+        "travel-advisories"
+      ]
+    }
+  ],
+  "reviewedEvents": [
+    {
+      "id": "japan-travel-advisory-2025-05-15",
+      "sourceId": "travel-advisories",
+      "sourceHash": "715b0bddea8508db61d8abef1bead001fd02c05cfdf3965e6335630259a82ef7",
+      "itemHash": "76f360032793df7c97a268d38de1ee6e68275d00b9bd5fea7f41c39bb07f123c",
+      "sourceUrl": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.jpn.html",
+      "title": "Japan travel advisory issued May 15, 2025",
+      "summary": "The advisory issued May 15, 2025 placed Japan at Level 1: Exercise Normal Precautions. It advised United States citizens to exercise caution when traveling abroad.",
+      "publishedAt": "2025-05-15",
+      "occurredAt": "2025-05-15",
+      "reviewedAt": "2026-10-06T00:13:24Z",
+      "reviewedByRole": "research-editor",
+      "reviewChecks": {
+        "completeInputReviewed": true,
+        "dateSemanticsChecked": true,
+        "roleRelevanceChecked": true,
+        "rightsChecked": true,
+        "personnelNamesRemoved": true,
+        "acronymsChecked": true,
+        "conflictsResolved": true
+      },
+      "status": "historical",
+      "postIds": [
+        "tokyo"
+      ],
+      "roleIds": [
+        "capital-tokyo-ambassador",
+        "dcm",
+        "capital-chief-of-staff"
+      ],
+      "sourceTitle": "Japan travel advisory issued May 15, 2025",
+      "publisher": "United States Department of State",
+      "supports": "The complete advisory feed entry supplies the publication date, country, advisory level and precaution wording. This record describes that dated issuance; it does not establish a new announcement or a live advisory level.",
+      "topic": "Travel advisory"
+    }
+  ]
+}
