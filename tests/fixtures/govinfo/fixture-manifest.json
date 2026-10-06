@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "mode": "complete-public-source-offline-fixtures",
+  "files": [
+    {
+      "path": "2026-20384-mods.xml",
+      "bytes": 9441,
+      "sha256": "7982bba22cef57612f2d48fdb14b2edd9e206dfee59861980a8c7cb3449af154"
+    },
+    {
+      "path": "2026-20384.htm",
+      "bytes": 8294,
+      "sha256": "a55176388a13f0d66318bdb31c839ac275977bcfbaa28e94523fd96a4abcdcd7"
+    },
+    {
+      "path": "FR-2026-10-05-mods.xml",
+      "bytes": 623157,
+      "sha256": "a82bf6140c8a92770f1170ed3cb38853e7f83b0f3594a00688808fc78e44c910"
+    },
+    {
+      "path": "document-requests.json",
+      "bytes": 4841,
+      "sha256": "ecd735c9dcc1ce4c2b9f93707782f6a5b11aabc87cf6698307e50d4e6773a700"
+    },
+    {
+      "path": "documentation-requests.json",
+      "bytes": 7001,
+      "sha256": "b1295d4865d2895c52bd7380996e1e7938ac93bc7778a5052e7163cc04e846d8"
+    },
+    {
+      "path": "govinfo-about.html",
+      "bytes": 82068,
+      "sha256": "47877b5635271d4539f76d26e78081891a522e739cfee7537f8ec219654d228d"
+    },
+    {
+      "path": "govinfo-content-details.html",
+      "bytes": 53919,
+      "sha256": "a4f719bc59fded5ea4323400ad3d73aefa76f7ba219932d9c2abf189ab9f90b9"
+    },
+    {
+      "path": "govinfo-policies.html",
+      "bytes": 64169,
+      "sha256": "d9e3a2f1cb4486ab4ecc4eff640f94f9a9bb8655ca71ff00694b236e7011ad1c"
+    },
+    {
+      "path": "request.json",
+      "bytes": 2293,
+      "sha256": "d93d499f227ab9c8a4aa38a0d29a19e91a3de785ee8b7b895f50cdb96f2adbd0"
+    }
+  ]
+}

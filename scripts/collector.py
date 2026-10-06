@@ -95,10 +95,14 @@ def validate_policy(policy):
             raise ValueError("Source identifiers must be unique safe slugs")
         source_ids.add(source["id"])
         public_url(source["url"], policy["allowedHosts"])
-        if source.get("nonBillable") is not True or source.get("parser") not in ("json-feed", "rss-atom", "govinfo-fr-html"):
+        if source.get("nonBillable") is not True or source.get("parser") not in ("json-feed", "rss-atom", "govinfo-fr-html", "govinfo-fr-mods"):
             raise ValueError("Source requires explicit non-billable admission and supported parser")
         if source["parser"] == "govinfo-fr-html":
             govinfo_document_url(source["url"])
+        if source["parser"] == "govinfo-fr-mods":
+            govinfo_metadata_url(source["url"])
+            if source.get("metadataOnly") is not True:
+                raise ValueError("Issue metadata requires metadata-only discovery admission")
         if not isinstance(source.get("pollMinutes"), int) or source["pollMinutes"] < 360:
             raise ValueError("Poll interval must be at least six hours")
         if not isinstance(source.get("dateOnlyPublication", False), bool):
@@ -188,9 +192,11 @@ def validate_publication_policy(policy):
 
 
 def validate_review_binding(event, sources):
+    source = next((source for source in sources if source["id"] == event["sourceId"]), None)
+    if source and source["parser"] == "govinfo-fr-mods":
+        raise ValueError("Issue metadata cannot approve events; review the complete document separately")
     if "reviewBinding" not in event:
         return
-    source = next((source for source in sources if source["id"] == event["sourceId"]), None)
     if event["reviewBinding"] != DOCUMENT_REVIEW_BINDING or not source or source["parser"] != "govinfo-fr-html":
         raise ValueError("Complete-document review binding is restricted to the admitted document parser")
 
@@ -201,6 +207,102 @@ def govinfo_document_url(url):
     if not match:
         raise ValueError("Expected an exact official Federal Register document URL")
     return calendar_date(match[1]), match[2]
+
+
+def govinfo_metadata_url(url):
+    public_url(url, ["www.govinfo.gov"])
+    match = re.fullmatch(r"https://www\.govinfo\.gov/metadata/pkg/FR-(\d{4}-\d{2}-\d{2})/mods\.xml", url)
+    if not match:
+        raise ValueError("Expected an exact official Federal Register issue metadata URL")
+    return calendar_date(match[1])
+
+
+def parse_govinfo_metadata(body, source_url):
+    """Discover complete document pointers only; metadata never approves prose."""
+    date = govinfo_metadata_url(source_url)
+    if len(body) > 1048576:
+        raise ValueError("Complete issue metadata exceeds the one-mebibyte limit")
+    text = body.decode("utf-8-sig")
+    declaration = re.match(r"<\?xml\s+[^?]*\?>", text)
+    if declaration:
+        encoding = re.search(r"encoding\s*=\s*['\"]([^'\"]+)['\"]", declaration[0])
+        if encoding and encoding[1].lower() != "utf-8":
+            raise ValueError("Issue metadata requires UTF-8")
+    remainder = text[declaration.end():] if declaration else text
+    if any(token in remainder.upper() for token in ("<!DOCTYPE", "<!ENTITY", "<?", "<!--")):
+        raise ValueError("Issue metadata declarations, instructions and comments are unsupported")
+    root = ET.fromstring(text)
+    ns = "{http://www.loc.gov/mods/v3}"
+    href = "{http://www.w3.org/1999/xlink}href"
+    if root.tag != ns + "mods" or root.get("version") != "3.3":
+        raise ValueError("Expected the reviewed MODS issue schema")
+    stack, count = [(root, 1)], 0
+    while stack:
+        node, depth = stack.pop()
+        count += 1
+        if count > 20000 or depth > 8 or not node.tag.startswith(ns):
+            raise ValueError("Issue metadata tree exceeds the reviewed schema bounds")
+        stack.extend((child, depth + 1) for child in node)
+
+    def one(parent, path, expected=None):
+        nodes = parent.findall(path, {"m": ns[1:-1]})
+        if len(nodes) != 1 or len(nodes[0]) or not (nodes[0].text or "").strip():
+            raise ValueError("Required issue metadata field is missing or ambiguous")
+        value = nodes[0].text.strip()
+        if expected is not None and value != expected:
+            raise ValueError("Issue metadata identity, date or link conflicts")
+        return value
+
+    package = "FR-" + date
+    base = "https://www.govinfo.gov/"
+    one(root, "m:titleInfo/m:title", "Federal Register")
+    one(root, "m:originInfo/m:dateIssued", date)
+    one(root, "m:extension/m:collectionCode", "FR")
+    one(root, "m:extension/m:docClass", "FR")
+    one(root, "m:extension/m:accessId", package)
+    one(root, "m:identifier[@type='uri']", base + "app/details/" + package)
+    for issued in root.iter(ns + "dateIssued"):
+        if calendar_date(issued.text) != date:
+            raise ValueError("Conflicting document publication date")
+    entries = root.findall(ns + "relatedItem")
+    if not 1 <= len(entries) <= 500:
+        raise ValueError("Issue metadata requires one to 500 direct constituent items")
+    classes = {"NOTICE": "Notices", "RULE": "Rules and Regulations", "PRORULE": "Proposed Rules", "PRESDOCU": "Presidential Documents"}
+    excluded = {package + "-FrontMatter": ("CONTENTS", "Contents"), package + "-ReaderAids": ("AIDS", "Reader Aids")}
+    seen, items = set(), []
+    for entry in entries:
+        document = one(entry, "m:extension/m:accessId")
+        if document in seen or entry.get("type") != "constituent" or entry.get("ID") != "id-" + document:
+            raise ValueError("Duplicate or invalid constituent document identity")
+        seen.add(document)
+        if entry.get(href) != base + "metadata/granule/" + package + "/" + document + "/mods.xml":
+            raise ValueError("Constituent metadata URL conflicts with its document")
+        one(entry, "m:titleInfo/m:title")
+        one(entry, "m:identifier[@type='FR Doc No.']", document)
+        one(entry, "m:identifier[@type='uri']", base + "app/details/" + package + "/" + document)
+        one(entry, "m:location/m:url[@displayLabel='Content Detail']", base + "app/details/" + package + "/" + document)
+        url = base + "content/pkg/" + package + "/html/" + document + ".htm"
+        one(entry, "m:location/m:url[@displayLabel='HTML rendition']", url)
+        formats = [child.get(href) for child in entry.findall(ns + "relatedItem") if child.get("type") == "otherFormat"]
+        expected_formats = [url] if document in excluded else [url, base + "content/pkg/" + package + "/pdf/" + document + ".pdf"]
+        if sorted(formats, key=str) != sorted(expected_formats):
+            raise ValueError("Constituent rendition links conflict or are missing")
+        kind = one(entry, "m:extension/m:granuleClass")
+        if document in excluded:
+            expected_kind, section = excluded[document]
+            if kind != expected_kind:
+                raise ValueError("Unexpected non-document constituent class")
+        else:
+            govinfo_document_url(url)
+            one(entry, "m:extension/m:frDocNumber", document)
+            if kind not in classes:
+                raise ValueError("Unknown Federal Register document class")
+            section = classes[kind]
+            one(entry, "m:location/m:url[@displayLabel='PDF rendition']", expected_formats[1])
+        one(entry, "m:titleInfo/m:partName", section)
+        if document not in excluded:
+            items.append({"itemHash": digest(ET.tostring(entry, encoding="utf-8")), "url": url, "publishedAt": date})
+    return items
 
 
 def parse_govinfo_document(body, source_url):
@@ -304,6 +406,8 @@ def parse_feed(body, parser, date_only=False, source_url=None):
     """Parse a complete body. Return hashes/links/dates; do not persist unreviewed prose."""
     if parser == "govinfo-fr-html":
         return parse_govinfo_document(body, source_url)
+    if parser == "govinfo-fr-mods":
+        return parse_govinfo_metadata(body, source_url)
     if parser == "json-feed":
         feed = json.loads(body.decode("utf-8"))
         if not isinstance(feed, dict) or not isinstance(feed.get("items"), list):
@@ -366,7 +470,7 @@ class NoRedirects(urllib.request.HTTPRedirectHandler):
 
 def fetch_source(source, previous, policy):
     public_url(source["url"], policy["allowedHosts"])
-    headers = {"User-Agent": "EmbassyManagerEducationalCollector/0.1", "Accept": "application/feed+json, application/json, application/atom+xml, application/rss+xml", "Accept-Encoding": "identity"}
+    headers = {"User-Agent": "EmbassyManagerEducationalCollector/0.1", "Accept": "application/feed+json, application/json, application/atom+xml, application/rss+xml, application/xml", "Accept-Encoding": "identity"}
     if previous.get("lastValidHash") and previous.get("etag"):
         headers["If-None-Match"] = previous["etag"]
     request = urllib.request.Request(source["url"], headers=headers, method="GET")
@@ -421,13 +525,15 @@ def run_tick(policy, state, now, output, fetch=fetch_source):
     accepted = state.setdefault("acceptedReviews", {})
     review_digest = digest(policy["reviewedEvents"])
     editorial_change = state.get("reviewDigest") != review_digest
+    pending_posts = set(state.get("pendingPosts", [])) & {post["id"] for post in policy["posts"]}
     due = [(post, due_date(post, now, editions.get(post["id"], {}).get("date"))) for post in policy["posts"]]
-    if editorial_change:
-        due = [(post, date or due_date(post, now, None)) for post, date in due]
+    if editorial_change or pending_posts:
+        due = [(post, date or (due_date(post, now, None) if editorial_change or post["id"] in pending_posts else None)) for post, date in due]
     due = [(post, date) for post, date in due if date]
     wanted = {sid for post, _ in due for sid in post["sourceIds"]}
     wanted.update(source["id"] for source in policy["sources"] if source.get("metadataOnly"))
     attempts = 0
+    deferred_sources = set()
     for source in policy["sources"]:
         if source["id"] not in wanted:
             continue
@@ -435,6 +541,7 @@ def run_tick(policy, state, now, output, fetch=fetch_source):
         if previous.get("checkedAt") and now - instant(previous["checkedAt"]) < timedelta(minutes=source["pollMinutes"]):
             continue
         if attempts >= policy["maxSourcesPerRun"]:
+            deferred_sources.add(source["id"])
             continue
         attempts += 1
         current = {**previous, "checkedAt": stamp(now)}
@@ -479,6 +586,11 @@ def run_tick(policy, state, now, output, fetch=fetch_source):
             accepted[event["id"]] = digest(event)
         return bool(matched)
     for post, date in due:
+        if deferred_sources.intersection(post["sourceIds"]):
+            # Retain the edition until capped checks finish, including same-day edits.
+            pending_posts.add(post["id"])
+            continue
+        pending_posts.discard(post["id"])
         previous = editions.get(post["id"], {})
         approved, warnings = [], []
         for sid in post["sourceIds"]:
@@ -518,6 +630,10 @@ def run_tick(policy, state, now, output, fetch=fetch_source):
                 queue.append({"sourceId": sid, "sourceHash": source["lastValidHash"], **item})
     state["reviewQueue"] = queue
     state["reviewDigest"] = review_digest
+    if pending_posts:
+        state["pendingPosts"] = sorted(pending_posts)
+    else:
+        state.pop("pendingPosts", None)
     return state
 
 
@@ -633,7 +749,7 @@ def inspect_feed(policy, path, source_id, item_url):
         entry = next(entry for entry in json.loads(body)["items"] if digest(entry) == item["itemHash"])
     else:
         root = ET.fromstring(body)
-        entries = root.findall("channel/item") if root.tag == "rss" else root.findall("{http://www.w3.org/2005/Atom}entry")
+        entries = root.findall("{http://www.loc.gov/mods/v3}relatedItem") if source["parser"] == "govinfo-fr-mods" else (root.findall("channel/item") if root.tag == "rss" else root.findall("{http://www.w3.org/2005/Atom}entry"))
         entry = ET.tostring(next(entry for entry in entries if digest(ET.tostring(entry, encoding="utf-8")) == item["itemHash"]), encoding="unicode")
     return {"sourceId": source_id, "sourceHash": digest(body), "responseBytes": len(body), **item, "completeEntry": entry}
 

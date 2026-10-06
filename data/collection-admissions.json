@@ -69,6 +69,27 @@
           "responseBytes": 10106
         }
       ]
+    },
+    {
+      "id": "methionine-review-2026-20384",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-05/html/2026-20384.htm",
+      "responseBytes": 8294,
+      "completeResponseSha256": "a55176388a13f0d66318bdb31c839ac275977bcfbaa28e94523fd96a4abcdcd7",
+      "itemCount": 1,
+      "earliestPublication": "2026-10-05",
+      "latestPublication": "2026-10-05",
+      "verifiedAt": "2026-10-06T05:32:26.624557Z",
+      "admission": {
+        "anonymousPublicRead": true,
+        "permittedFeedUse": true,
+        "verifiedAt": "2026-10-06",
+        "accessEvidenceUrl": "https://www.govinfo.gov/content/pkg/FR-2026-10-05/html/2026-20384.htm",
+        "rightsEvidenceUrl": "https://www.govinfo.gov/about/policies",
+        "scope": "Anonymous access to one complete Government Publishing Office Federal Register notice. Publish only attributed government-authored facts and a short reviewed paraphrase; no personal contacts, third-party works, photographs or full source article."
+      },
+      "reviewBinding": "complete-document-content-v1",
+      "completeDocumentContentSha256": "ecf6d170687bcbafcca868417c9ec7f31c23a6c3ccb5f0f440520cf2a1acee58",
+      "contentReviewedAt": "2026-10-06T05:32:26.624557Z"
     }
   ],
   "reviewLimitations": [

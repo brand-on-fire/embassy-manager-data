@@ -39,6 +39,8 @@ jobs:
           python3 -m unittest discover -s tests -p test_collector.py -k CollectorTests
           python3 -m unittest discover -s tests -p test_collector_publication.py
           python3 -m unittest discover -s tests -p test_collector_documents.py
+          python3 -m unittest discover -s tests -p test_collector_mods.py
+          python3 -m unittest discover -s tests -p test_collector_source_backlog.py
       - name: Restore bounded public collection state
         run: python3 collector-template/publish.py restore
       - name: Collect admitted sources and export reviewed editions
