@@ -1,0 +1,506 @@
+{
+  "items": [
+    {
+      "itemHash": "d0b1b10c44c5a7b461c93cf62cc3d42572a476a31d9ead5c08985f03de654caf",
+      "publishedAt": "2026-06-16T17:31:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-16"
+    },
+    {
+      "itemHash": "b9cc041ecd66439c74491574414e06beb2ff3da17fa70f7690a6952aa50dddb1",
+      "publishedAt": "2026-06-16T21:05:45Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2024-08-15"
+    },
+    {
+      "itemHash": "0430b5d964172b4dadad74818b3284260fd5d46883c84713918933ebfc9fe97d",
+      "publishedAt": "2026-06-17T04:56:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-17"
+    },
+    {
+      "itemHash": "8311e6378e57e8fdec88494956440ba5d14332ed292853d79fb7d10bb8d0e85a",
+      "publishedAt": "2026-06-18T05:09:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-18"
+    },
+    {
+      "itemHash": "27ada3a3889f4351cff6b6fe1aa9c0222eeed2999440194aee0304cf8ce5fc24",
+      "publishedAt": "2026-06-18T17:12:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2025-04-10"
+    },
+    {
+      "itemHash": "479d9b75825d1ea26da6a7b6c374656799c1a3c01c9b2ecb9e33d21b1784fdb2",
+      "publishedAt": "2026-06-19T06:42:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-22"
+    },
+    {
+      "itemHash": "1657d93cfcf1d8d1b7b32af1f8abf27b79a330c437e390d7d0cb9bdc8adcf707",
+      "publishedAt": "2026-06-23T07:55:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-23"
+    },
+    {
+      "itemHash": "acbc2d880d177bfbb7112d71db94c13e12e6850e8b29709f16073e0309363da3",
+      "publishedAt": "2026-06-24T00:13:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2025-04-01"
+    },
+    {
+      "itemHash": "9de853f43d4100b5fd1992250eff40f4e85f94ab956e0ec67b0db9f11ffa41df",
+      "publishedAt": "2026-06-24T00:25:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2022-04-07"
+    },
+    {
+      "itemHash": "c273ee8b616457c20b9b8eaa310d56bd9bb405f8d4f76921dd012829172ecd39",
+      "publishedAt": "2026-06-24T18:46:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-24"
+    },
+    {
+      "itemHash": "786b7606a4379b77aa5160c664ad5b2a5a89f9d147afe92f9aae41b017ff9ef3",
+      "publishedAt": "2026-06-25T15:18:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-25"
+    },
+    {
+      "itemHash": "7af05b88e82a13ab54817dc493e4f3ef70624afe4b2ea7670c8fb90d1a86a5d9",
+      "publishedAt": "2026-06-26T08:53:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-26"
+    },
+    {
+      "itemHash": "75ab77f878f1ce5bbf04e1be5855dab6983c0765d237af83a50409efe3b76564",
+      "publishedAt": "2026-06-29T21:20:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-29"
+    },
+    {
+      "itemHash": "2daf38d3fca433d442d4860bbc3a3dee4861c0a7e60aaeee5ec53ce2aa1db9f3",
+      "publishedAt": "2026-06-30T16:24:01Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-06-30"
+    },
+    {
+      "itemHash": "dbe497570405c433f12e327fb22fb7bd6aef6e5bd39983f06d282902d8009419",
+      "publishedAt": "2026-07-01T17:40:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-01"
+    },
+    {
+      "itemHash": "038a766b654e83eae47fa286b81af5078e90082699df7d74213d628125c11a0b",
+      "publishedAt": "2026-07-02T18:50:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-02"
+    },
+    {
+      "itemHash": "2e6b4bd21695e606d8182f8a6b60e294c798a5b86d713934f3bc24de7afc8ada",
+      "publishedAt": "2026-07-03T09:12:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-06"
+    },
+    {
+      "itemHash": "3c67d4b7e133da7582cf6b378217d31271f00b8af994cf69a9785f6ffc244f27",
+      "publishedAt": "2026-07-07T18:50:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-07"
+    },
+    {
+      "itemHash": "5e711953e00ae0473a186e43e496f9790c941d3c06e6b0a1380550e063c1b2ea",
+      "publishedAt": "2026-07-08T06:05:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-08"
+    },
+    {
+      "itemHash": "b1c147ab065d8545be07fc6f4ffe297772a870a6fd3e6dac4e3a48141702c732",
+      "publishedAt": "2026-07-09T16:12:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-09"
+    },
+    {
+      "itemHash": "003985cad0f18210be1553f27b9712955d26cd7a1f7e87ac166b39e2c1018e92",
+      "publishedAt": "2026-07-10T10:10:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2019-04-30"
+    },
+    {
+      "itemHash": "75c4c70691590d150594d14e583e45d192e819c3ed8a15a8946e8437cacb75b9",
+      "publishedAt": "2026-07-10T14:51:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2023-07-12"
+    },
+    {
+      "itemHash": "70871dd2398496ec9605a4ddf7ce3c8ca97010dcd990c950c25b56bada2aa222",
+      "publishedAt": "2026-07-10T18:55:09Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-10"
+    },
+    {
+      "itemHash": "7ae8b4a4ca095a6cdcd00fc4d63de033ac740c773fbf3f8625e02be92bdb6934",
+      "publishedAt": "2026-07-13T16:25:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-13"
+    },
+    {
+      "itemHash": "2081a6333a00e8153084ae0395b7763a8782aae028a625208c8c829e13969604",
+      "publishedAt": "2026-07-14T16:33:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-14"
+    },
+    {
+      "itemHash": "ed5e1cba175981c6ae9fcce7afdd6481e387a92d5e6a5b429aeab87727a0fad0",
+      "publishedAt": "2026-07-15T05:20:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-15"
+    },
+    {
+      "itemHash": "f68084f5ce9a8cfd358cdf7802ae9e3913375835bac8f9d8caadf33cbdf51463",
+      "publishedAt": "2026-07-16T10:47:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-16"
+    },
+    {
+      "itemHash": "d6a58caec0a193b9d0dc172da2b879cb8aaa5ca5b3ae9dc36f27a85aa87aa04e",
+      "publishedAt": "2026-07-17T16:00:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-17"
+    },
+    {
+      "itemHash": "c72c5eeb1697dc24fad2a8c6bd79ba2b8aec48174cb7ab212085babdcf1d684a",
+      "publishedAt": "2026-07-19T15:10:02Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2024-02-05"
+    },
+    {
+      "itemHash": "75b0130f85f36d64550c561e225895ac01ff213a5db1b6eb84d6a7f69d77463b",
+      "publishedAt": "2026-07-20T17:50:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-20"
+    },
+    {
+      "itemHash": "9f8d4f27f02480e57fce7a9b7a173b431401f1ab3f3c02aa5ac8256bb6fef477",
+      "publishedAt": "2026-07-22T05:20:01Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-22"
+    },
+    {
+      "itemHash": "482d9883a33c0ceeb9a21ae5442c1fb92b9d53889b0936fb9883f38428b49154",
+      "publishedAt": "2026-07-22T16:00:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-04-02"
+    },
+    {
+      "itemHash": "570fd7bd0e773f603f186226ad860dc55f3a7d31b70b6cd16dce68c1dbb2fba3",
+      "publishedAt": "2026-07-23T20:02:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-23"
+    },
+    {
+      "itemHash": "3576a707331928adb26277653b3a0e0d83d17aabcc150ef2c90d88172f36b660",
+      "publishedAt": "2026-07-24T16:13:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2024-06-18"
+    },
+    {
+      "itemHash": "6d058fdb041b4115978eb829119309d569fc97f8c175aa779395ecd2df4dead8",
+      "publishedAt": "2026-07-24T20:25:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-24"
+    },
+    {
+      "itemHash": "bb47d5698f86ffe40c90306f958d3baf040089da79e086fba0fa1a821659a647",
+      "publishedAt": "2026-07-27T14:55:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-21"
+    },
+    {
+      "itemHash": "925b04388fe47d9720d18f461911f0a9c8061b69fb8af2787ca9401a71c843ea",
+      "publishedAt": "2026-07-27T22:13:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-27"
+    },
+    {
+      "itemHash": "f0e1c1c79184895a3b9a6216d34bcad3ada1c35be21c08feac39a6639540b31c",
+      "publishedAt": "2026-07-29T10:41:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-29"
+    },
+    {
+      "itemHash": "2de61b4ea1614ffe1a3f67a400b56296b0764edcca225f0d0cdf1c2900c53ff5",
+      "publishedAt": "2026-07-30T05:42:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-30"
+    },
+    {
+      "itemHash": "1971ce59a9fe656a0bc273bebdd09a071d194d6317c41c7eb1ba0cabcea3ac1a",
+      "publishedAt": "2026-08-03T18:24:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-31"
+    },
+    {
+      "itemHash": "cbe514ccb5181106c2dab812fabfba5f116b74245ad0c6d98ab3d4f5ad6a70f1",
+      "publishedAt": "2026-08-03T19:52:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-03"
+    },
+    {
+      "itemHash": "a183e6eff94f86308db89fbdff848f862efff8a55a6f11696f4bd673bb7811f7",
+      "publishedAt": "2026-08-04T17:49:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-07-28"
+    },
+    {
+      "itemHash": "a010422a08d8fdca8b87b943bb342c147618376d438cb3e6378d0331398670c3",
+      "publishedAt": "2026-08-06T14:01:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-1995-01-04"
+    },
+    {
+      "itemHash": "f7d1c5751f3597672f5c4adc5891ca78be5bf259992ebc7aa2b7b25de5b3a028",
+      "publishedAt": "2026-08-07T16:16:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-07"
+    },
+    {
+      "itemHash": "efbfc3792cf120e28c0cdcfdb2dad335c022dc4487e9e247ac29ed5da9ff1fed",
+      "publishedAt": "2026-08-07T16:22:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-06"
+    },
+    {
+      "itemHash": "50c40232dc621c9d28679d9d0345bf2e60efe746799413c40e80dee609acceec",
+      "publishedAt": "2026-08-07T16:23:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-05"
+    },
+    {
+      "itemHash": "ad917411cffbbc93013b1dfecadade38664570c792233e8714a78d5b55c2a63b",
+      "publishedAt": "2026-08-07T16:54:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2022-08-15"
+    },
+    {
+      "itemHash": "9c790dffb64e0ee74dfa20880e4a1c0551132beaa4db5b87bb84cb9050149189",
+      "publishedAt": "2026-08-08T08:00:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-10"
+    },
+    {
+      "itemHash": "d7869d4c98c4c7d3598c03e8ffa77a8de2ffc8cbeec1c634b1ca11f20f47e42e",
+      "publishedAt": "2026-08-11T17:17:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-11"
+    },
+    {
+      "itemHash": "f153c6746c77b76203f80e4b1bff78fa4383075fc5051c7692c066b49beafc1f",
+      "publishedAt": "2026-08-11T22:05:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2023-12-14"
+    },
+    {
+      "itemHash": "f37bda8560433f2781dc8fb97bb689ec5178eef2ef90df5240302213e77b0f7d",
+      "publishedAt": "2026-08-12T05:31:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-12"
+    },
+    {
+      "itemHash": "88fb51cd280f608090d09b1728e6c387d108cd9030a1582b448cb3661bbd46ae",
+      "publishedAt": "2026-08-12T21:56:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-04"
+    },
+    {
+      "itemHash": "c810e0a33a94aa6e9ffe0fe0f187c99a5d0f24c3ced5a515bf68c9a958ec6717",
+      "publishedAt": "2026-08-14T19:44:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-13"
+    },
+    {
+      "itemHash": "6f823193497dba701b4722677c32401b7e34e17ead7e78c57bbf23c9544688fb",
+      "publishedAt": "2026-08-15T20:25:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-04-01"
+    },
+    {
+      "itemHash": "1cceb7d22db4f7a2a1c4ed708e9e62a230b896bb4a465586727fce8cbb4d2410",
+      "publishedAt": "2026-08-16T14:15:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2022-08-04"
+    },
+    {
+      "itemHash": "5f6dc594d4ff03655677281f3b5a5d76e1843806b066ec31b5989e24f64f046a",
+      "publishedAt": "2026-08-17T15:44:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-17"
+    },
+    {
+      "itemHash": "b89b02a18c285fe1c468828d8d181d102a92bd5097701e53acc0ae4f261f3308",
+      "publishedAt": "2026-08-18T15:05:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-18"
+    },
+    {
+      "itemHash": "77bf1df54502e63cd897b77c931d5537febbee243e46519aee1bbe067062470b",
+      "publishedAt": "2026-08-18T21:24:59Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-14"
+    },
+    {
+      "itemHash": "eadff05265fc7ebeb5adb205f336fcacdc9dc1b0eb4e02c63bba4625f8a52b9b",
+      "publishedAt": "2026-08-19T04:52:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-19"
+    },
+    {
+      "itemHash": "fab1c9ff2363c154e446a1cc675c7f1f8adf8465eff0c9586f171cc34a77251c",
+      "publishedAt": "2026-08-20T05:49:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-20"
+    },
+    {
+      "itemHash": "15dde8761e902d5fddf3166fe4d56c4a4933084d318dc3155fc1b808e0c44037",
+      "publishedAt": "2026-08-21T15:09:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-21"
+    },
+    {
+      "itemHash": "6053e3d5a07eab8ad0ddf939c4a899df579c68663261f668fb84e08404528f68",
+      "publishedAt": "2026-08-25T15:40:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2025-04-11"
+    },
+    {
+      "itemHash": "42314dbd1fab4640255396b2d396601de915b059e1bd55a30e8ef2fd4ca66f72",
+      "publishedAt": "2026-08-25T20:30:06Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-25"
+    },
+    {
+      "itemHash": "91e7b8ddb1eedc3dc41a0c05f3c00e0ac64738613400b3732869133a262acbbb",
+      "publishedAt": "2026-08-26T15:51:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-26"
+    },
+    {
+      "itemHash": "c0724dfc0f2c6be5990ca745398e9dfb71d2b26b8dbbbd7d18cb66e76abd8258",
+      "publishedAt": "2026-08-27T05:29:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-27"
+    },
+    {
+      "itemHash": "b0309c793c5d29a0365d6bd1cdad87de3a010328d4a76ffad948c9fc4f010d7d",
+      "publishedAt": "2026-08-31T14:54:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2002-10-09"
+    },
+    {
+      "itemHash": "0ba5f257ed9b3adf88ac777e34a3f0d6bf0c23ded21ba64ca48d2cae214ec339",
+      "publishedAt": "2026-08-31T18:42:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-31"
+    },
+    {
+      "itemHash": "1b40f68476cb474e2066863637171a5f69e34d5c1b777b954b004dd80d8d0cc5",
+      "publishedAt": "2026-08-31T22:21:06Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-28"
+    },
+    {
+      "itemHash": "13a82ebeee2cf8a6f3c1de78d6be0bc706460663d33b78c7d2df776bc9ed0543",
+      "publishedAt": "2026-09-01T15:20:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-01"
+    },
+    {
+      "itemHash": "c268e7159068f5a0d474001d0ce1bbc69b11556669440517d430bb95ada2df99",
+      "publishedAt": "2026-09-02T05:02:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-02"
+    },
+    {
+      "itemHash": "e90ed769285d68ab1716237663cf742f602cec9ce616320449a02330a7f35170",
+      "publishedAt": "2026-09-03T19:41:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-03"
+    },
+    {
+      "itemHash": "c660330d5a233e6a8e2151734877875f6c32c0986d7dc58664ff6b0ea021e76b",
+      "publishedAt": "2026-09-04T05:40:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-04"
+    },
+    {
+      "itemHash": "be55f3f6d95da84157bb50a469cdfdbb68fd314810255633df3976e37131fb20",
+      "publishedAt": "2026-09-05T05:26:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-08"
+    },
+    {
+      "itemHash": "3e36098756d8b3a458b643ad98f0ec3d1bae0dc058c17b3f65ad56a7c7a94664",
+      "publishedAt": "2026-09-09T05:37:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-09"
+    },
+    {
+      "itemHash": "1fc4b100f8e502a8be01abc0096637ecc1616b19a036426ab713afa88e563f34",
+      "publishedAt": "2026-09-10T06:59:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-10"
+    },
+    {
+      "itemHash": "417332fa4a89e55a85106ce7eb1961fd1dba263d099a82baa88e8c74edc8af39",
+      "publishedAt": "2026-09-10T21:34:03Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2017-12-26"
+    },
+    {
+      "itemHash": "5453ceeea023a21bb29617cd01773b513ef6ae87ad8beffca40470cffb0f8639",
+      "publishedAt": "2026-09-11T05:56:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-11"
+    },
+    {
+      "itemHash": "adfadd4390a5b9174f01cb60fd6e18b03165f36179179596583d05b329a427da",
+      "publishedAt": "2026-09-14T16:21:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-14"
+    },
+    {
+      "itemHash": "d5e1fb2559a2569a4aeab81ae4ba763b60dc004d0bdfb74bd26f871dbf9029b3",
+      "publishedAt": "2026-09-15T18:44:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-15"
+    },
+    {
+      "itemHash": "ff3569d47c836433560c22e42857b3e87b5e3b05f24d10c4e8347e00c9cc6a97",
+      "publishedAt": "2026-09-16T22:43:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-16"
+    },
+    {
+      "itemHash": "42e30dd6c6f58535660445c1cb3f2a70e1d52e015dbb430d0b8c9b52cba364e3",
+      "publishedAt": "2026-09-17T05:12:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-17"
+    },
+    {
+      "itemHash": "dcdefc0cc16ba54320a416326deffc6fe3d2b61c9533ab926640447be0331b17",
+      "publishedAt": "2026-09-22T05:25:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-21"
+    },
+    {
+      "itemHash": "1f6e64361e2b0d08f5d58ef2dbe6675260b012731b0050144e93fc9008198ea2",
+      "publishedAt": "2026-09-22T08:06:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-22"
+    },
+    {
+      "itemHash": "394d7b9afdfc979409e0f993046d4f6b13950704f12ac1caf7d3f500d62c2e3d",
+      "publishedAt": "2026-09-22T23:45:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2022-08-03"
+    },
+    {
+      "itemHash": "79d24e0f6f02cd3c403d3df5b7a7e0ec1b2af94ebc4da4ea78adabd3b98a8d48",
+      "publishedAt": "2026-09-22T23:54:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2025-04-02"
+    },
+    {
+      "itemHash": "a26a80dc1f91e224f909b82df5e815fb544de8d88acb75758e40cce8c2d28340",
+      "publishedAt": "2026-09-22T23:56:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2025-04-03"
+    },
+    {
+      "itemHash": "ad28f0e5e418173b5ffda7d90426fcee9d5522cca84d04a4d258058c85a75d1d",
+      "publishedAt": "2026-09-23T09:24:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-23"
+    },
+    {
+      "itemHash": "a940adfb077e0d18110a848fe459aa18b16c5ad974ceb6148b1afd788e69075d",
+      "publishedAt": "2026-09-23T15:18:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-18"
+    },
+    {
+      "itemHash": "44068128da5ab9156ede3887062cb71c9a68f9d137c236e4b1f80be9d0eb7560",
+      "publishedAt": "2026-09-23T17:26:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2025-04-04"
+    },
+    {
+      "itemHash": "a31f0d3cc66c9b54b7cf1aba7ff05f9e8fd320a2f9f09b7c5810bee9d122b3da",
+      "publishedAt": "2026-09-24T04:47:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-24"
+    },
+    {
+      "itemHash": "02216a9c7adc613c4910a86f92de8c2d1ea61c6f9604c0ddbf8d4dc1af910c01",
+      "publishedAt": "2026-09-25T07:24:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-25"
+    },
+    {
+      "itemHash": "abe016d4c429fe249660534fc3cc08838c840327a4c8c318d98b91c9af95d8d0",
+      "publishedAt": "2026-09-28T20:38:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-28"
+    },
+    {
+      "itemHash": "5eea2987b534ed607dc56f02dd671af9060a531b81365bb93e65e94b72dc8e40",
+      "publishedAt": "2026-09-29T08:17:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-29"
+    },
+    {
+      "itemHash": "f4a9bb2104b2c8ee75a315f21ad820747eefd72db6c3963fd1c23212e80ae97d",
+      "publishedAt": "2026-09-29T22:44:09Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-08-24"
+    },
+    {
+      "itemHash": "c62fd8db06b37ae6d37ef0a50c317fe255496ddf24a694eedf00850e566f1d24",
+      "publishedAt": "2026-09-30T18:16:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2023-02-07"
+    },
+    {
+      "itemHash": "f74a6d136575f12966972cf8e8045ddf25b05546857e67a2a1910f273b3323ca",
+      "publishedAt": "2026-10-01T19:26:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-01"
+    },
+    {
+      "itemHash": "4d4b35a6025a4c50da4ceeffc1330c4b5e990ccb08580a503d9c34937ce4b28e",
+      "publishedAt": "2026-10-01T19:31:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-09-30"
+    },
+    {
+      "itemHash": "71f82963678d1d053aa9beb532aca6369e555226939bca2bf4d3fdba900fa4ca",
+      "publishedAt": "2026-10-02T06:17:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-02"
+    },
+    {
+      "itemHash": "d50993f0dc5f5b92a86d38070497fdc6ddfd9ffb54b544feb620dfd5e67e7d64",
+      "publishedAt": "2026-10-05T18:14:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-05"
+    },
+    {
+      "itemHash": "93ffb6825c014394e734ffe4a5077b7750be2b7e9a823d7847224fa78934e292",
+      "publishedAt": "2026-10-06T07:45:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-06"
+    }
+  ],
+  "sourceHash": "320d4a921623debda2efcb3c9d8046ae4c720d40b3629c0756feb17ef2a46038",
+  "sourceId": "federal-register"
+}
