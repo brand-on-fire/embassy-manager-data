@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "verifiedAt": "2026-10-06T00:13:24Z",
-  "activation": "disabled",
+  "verifiedAt": "2026-10-06T00:40:13.568924Z",
+  "activation": "local-bootstrap-ready-not-published",
   "sources": [
     {
       "id": "travel-advisories",
       "url": "https://travel.state.gov/_res/rss/TAsTWs.xml",
       "responseBytes": 614413,
-      "completeResponseSha256": "715b0bddea8508db61d8abef1bead001fd02c05cfdf3965e6335630259a82ef7",
+      "completeResponseSha256": "be0d4e31fc5c080f8982d217830532215bff9eb0b91dbfe2a37d571ef7121e96",
       "itemCount": 223,
       "earliestPublication": "2023-06-27",
       "latestPublication": "2026-09-15",

@@ -58,6 +58,13 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(envelope['collection']['sourceCheckedAt'], '2026-10-05T06:00:00Z')
         publisher.storage_guard(self.out, 0, self.root / 'empty-git')
 
+    def test_actual_clock_microseconds_survive_the_public_contract(self):
+        data = reviewed_policy(); now = NOW + timedelta(microseconds=384716)
+        manifest, envelope = self.export(data, self.tick(data, now=now))
+        self.assertEqual(manifest['generatedAt'], '2026-10-05T06:00:00.384716Z')
+        self.assertEqual(envelope['generatedAt'], manifest['generatedAt'])
+        self.assertEqual(envelope['collection']['sourceCheckedAt'], manifest['generatedAt'])
+
     def test_unchanged_tick_keeps_every_export_byte_and_mtime(self):
         data = reviewed_policy(); state = self.tick(data)
         collector.write_json(self.snapshots / 'state.json', state)

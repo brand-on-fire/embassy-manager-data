@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "enabled": false,
+  "enabled": true,
   "allowedHosts": [
     "travel.state.gov",
     "www.govinfo.gov"
@@ -71,14 +71,14 @@
     {
       "id": "japan-travel-advisory-2025-05-15",
       "sourceId": "travel-advisories",
-      "sourceHash": "715b0bddea8508db61d8abef1bead001fd02c05cfdf3965e6335630259a82ef7",
+      "sourceHash": "be0d4e31fc5c080f8982d217830532215bff9eb0b91dbfe2a37d571ef7121e96",
       "itemHash": "76f360032793df7c97a268d38de1ee6e68275d00b9bd5fea7f41c39bb07f123c",
       "sourceUrl": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.jpn.html",
       "title": "Japan travel advisory issued May 15, 2025",
       "summary": "The advisory issued May 15, 2025 placed Japan at Level 1: Exercise Normal Precautions. It advised United States citizens to exercise caution when traveling abroad.",
       "publishedAt": "2025-05-15",
       "occurredAt": "2025-05-15",
-      "reviewedAt": "2026-10-06T00:13:24Z",
+      "reviewedAt": "2026-10-06T00:40:13.568924Z",
       "reviewedByRole": "research-editor",
       "reviewChecks": {
         "completeInputReviewed": true,

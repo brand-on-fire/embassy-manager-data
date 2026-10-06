@@ -1,0 +1,40 @@
+# Active public-only collection. Disable this workflow or set policy enabled:false to stop.
+name: Collect reviewed public briefings
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: embassy-public-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    # Evaluated before runner allocation: wrong/private/unknown repositories never run.
+    if: github.event.repository.private == false && github.repository == 'brand-on-fire/embassy-manager-data' && github.event.repository.visibility == 'public' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Validate offline collection and publication behavior
+        run: |
+          python3 -m unittest discover -s tests -p test_collector.py -k CollectorTests
+          python3 -m unittest discover -s tests -p test_collector_publication.py
+      - name: Restore bounded public collection state
+        run: python3 collector-template/publish.py restore
+      - name: Collect admitted sources and export reviewed editions
+        run: python3 scripts/collector.py --collect --output generated/collector-state --export generated
+      - name: Verify limits and publish changed public files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 collector-template/publish.py publish
