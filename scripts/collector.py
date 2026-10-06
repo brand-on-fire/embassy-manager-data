@@ -7,6 +7,7 @@ import json
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from http.client import HTTPException
+from html.parser import HTMLParser
 from pathlib import Path
 import re
 import urllib.error
@@ -18,6 +19,7 @@ from zoneinfo import ZoneInfo
 UTC = timezone.utc
 REVIEW_CHECKS = ("completeInputReviewed", "dateSemanticsChecked", "roleRelevanceChecked", "rightsChecked", "personnelNamesRemoved", "acronymsChecked", "conflictsResolved")
 PUBLIC_STATUSES = ("proposed", "announced", "effective", "historical", "reported")
+DOCUMENT_REVIEW_BINDING = "complete-document-content-v1"
 
 
 def calendar_date(value):
@@ -93,8 +95,10 @@ def validate_policy(policy):
             raise ValueError("Source identifiers must be unique safe slugs")
         source_ids.add(source["id"])
         public_url(source["url"], policy["allowedHosts"])
-        if source.get("nonBillable") is not True or source.get("parser") not in ("json-feed", "rss-atom"):
+        if source.get("nonBillable") is not True or source.get("parser") not in ("json-feed", "rss-atom", "govinfo-fr-html"):
             raise ValueError("Source requires explicit non-billable admission and supported parser")
+        if source["parser"] == "govinfo-fr-html":
+            govinfo_document_url(source["url"])
         if not isinstance(source.get("pollMinutes"), int) or source["pollMinutes"] < 360:
             raise ValueError("Poll interval must be at least six hours")
         if not isinstance(source.get("dateOnlyPublication", False), bool):
@@ -127,6 +131,9 @@ def validate_policy(policy):
         for key in ("title", "summary", "reviewedByRole"):
             safe_text(event.get(key))
         public_url(event["sourceUrl"])
+        validate_review_binding(event, policy["sources"])
+        if event.get("precision", "country") not in ("country", "relevance"):
+            raise ValueError("Collected events require explicit country relevance or country location")
     if "publication" in policy:
         validate_publication_policy(policy)
 
@@ -152,8 +159,11 @@ def validate_publication_policy(policy):
         if not post.get("roleIds") or any(not re.fullmatch(r"[a-z0-9-]+", role) for role in post["roleIds"]):
             raise ValueError("Publication requires explicit supported role identifiers")
     for event in policy["reviewedEvents"]:
+        validate_review_binding(event, policy["sources"])
         if any(event.get("reviewChecks", {}).get(key) is not True for key in REVIEW_CHECKS):
             raise ValueError("Incomplete editorial review")
+        if event.get("precision", "country") not in ("country", "relevance"):
+            raise ValueError("Collected events require explicit country relevance or country location")
         for key in ("sourceTitle", "publisher", "supports", "topic"):
             safe_text(event.get(key))
         if not event.get("roleIds") or any(not set(event["roleIds"]) & set(posts[pid]["roleIds"]) for pid in event["postIds"]):
@@ -177,8 +187,123 @@ def validate_publication_policy(policy):
                 raise ValueError("Reviewed publication contains an undefined acronym")
 
 
-def parse_feed(body, parser, date_only=False):
+def validate_review_binding(event, sources):
+    if "reviewBinding" not in event:
+        return
+    source = next((source for source in sources if source["id"] == event["sourceId"]), None)
+    if event["reviewBinding"] != DOCUMENT_REVIEW_BINDING or not source or source["parser"] != "govinfo-fr-html":
+        raise ValueError("Complete-document review binding is restricted to the admitted document parser")
+
+
+def govinfo_document_url(url):
+    public_url(url, ["www.govinfo.gov"])
+    match = re.fullmatch(r"https://www\.govinfo\.gov/content/pkg/FR-(\d{4}-\d{2}-\d{2})/html/(\d{4}-\d{4,6})\.htm", url)
+    if not match:
+        raise ValueError("Expected an exact official Federal Register document URL")
+    return calendar_date(match[1]), match[2]
+
+
+def parse_govinfo_document(body, source_url):
+    """Validate one complete official document; retain only its hash, URL and issue date."""
+    date, document = govinfo_document_url(source_url)
+
+    def email(encoded):
+        # Cloudflare's first byte is an XOR key; preserve the complete decoded
+        # address, never its changing nonce. The value is hashed, not published.
+        if not re.fullmatch(r"[0-9a-fA-F]{4,642}", encoded or "") or len(encoded) % 2:
+            raise ValueError("Unsupported protected email encoding")
+        raw = bytes.fromhex(encoded)
+        value = bytes(byte ^ raw[0] for byte in raw[1:]).decode("utf-8")
+        if not re.fullmatch(r"[^\s<>@]+@[^\s<>@]+\.[^\s<>@]+", value):
+            raise ValueError("Invalid protected email address")
+        return value
+
+    class Document(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.opened = self.closed = self.html_closed = 0
+            self.in_pre = False
+            self.parts = []
+            self.links = []
+            self.protected_email = None
+            self.protected_placeholder = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "pre":
+                self.opened += 1
+                if self.opened != 1 or self.in_pre:
+                    raise ValueError("Expected one complete document body")
+                self.in_pre = True
+            elif self.in_pre:
+                if tag not in ("a", "span", "bullet", "br") or self.protected_email is not None:
+                    raise ValueError("Unsupported document body markup")
+                fields = dict(attrs)
+                if len(fields) != len(attrs):
+                    raise ValueError("Duplicate document attributes")
+                if tag == "a" and "href" in fields:
+                    target = fields["href"]
+                    if not isinstance(target, str):
+                        raise ValueError("Invalid document link")
+                    prefix = "/cdn-cgi/l/email-protection#"
+                    if target.startswith(prefix):
+                        target = "mailto:" + email(target[len(prefix):])
+                    elif target.startswith("/cdn-cgi/l/email-protection"):
+                        raise ValueError("Unsupported protected email link")
+                    self.links.append(target)
+                if "data-cfemail" in fields:
+                    if tag != "span" or fields.get("class") != "__cf_email__":
+                        raise ValueError("Unsupported protected email element")
+                    self.protected_email = email(fields["data-cfemail"])
+                    self.protected_placeholder = []
+                if tag == "br":
+                    self.parts.append("\n")
+
+        def handle_endtag(self, tag):
+            if tag == "span" and self.protected_email is not None:
+                if "".join(self.protected_placeholder).replace("\u00a0", " ") != "[email protected]":
+                    raise ValueError("Unexpected protected email contents")
+                self.parts.append(self.protected_email)
+                self.protected_email = None
+            elif tag == "pre":
+                if not self.in_pre:
+                    raise ValueError("Unexpected document end")
+                self.closed += 1
+                self.in_pre = False
+            elif tag == "html":
+                self.html_closed += 1
+
+        def handle_data(self, data):
+            if self.in_pre:
+                (self.protected_placeholder if self.protected_email is not None else self.parts).append(data)
+
+    if b"<!DOCTYPE" in body.upper() or b"<!ENTITY" in body.upper():
+        raise ValueError("Document declarations are unsupported")
+    reader = Document()
+    reader.feed(body.decode("utf-8"))
+    reader.close()
+    if reader.opened != 1 or reader.closed != 1 or reader.in_pre or reader.html_closed != 1 or reader.protected_email is not None:
+        raise ValueError("Incomplete Federal Register document")
+    complete_text = "".join(reader.parts)
+    text = complete_text.strip()
+    header = re.match(r"\[Federal Register Volume \d+, Number \d+ \(([A-Za-z]+, [A-Za-z]+ \d{1,2}, \d{4})\)\]\n", text)
+    if not header:
+        raise ValueError("Federal Register issue date is missing")
+    parsed = datetime.strptime(header[1], "%A, %B %d, %Y")
+    if parsed.date().isoformat() != date or parsed.strftime("%A") != header[1].split(",")[0]:
+        raise ValueError("Document publication date conflicts with its URL or weekday")
+    if text.count("[FR Doc No: " + document + "]") != 1 or not re.search(r"\[FR Doc\. " + re.escape(document) + r" Filed [^\]\n]+\]\s*BILLING CODE [A-Z0-9-]+\s*$", text):
+        raise ValueError("Document number or complete filing footer is missing")
+    # Hash the entire decoded document, including whitespace and every link in
+    # source order. Only publisher chrome and email-obfuscation nonces are not
+    # content. The complete raw response remains separately bound by sourceHash.
+    content = {"binding": DOCUMENT_REVIEW_BINDING, "text": complete_text, "links": reader.links}
+    return [{"itemHash": digest(content), "url": source_url, "publishedAt": date}]
+
+
+def parse_feed(body, parser, date_only=False, source_url=None):
     """Parse a complete body. Return hashes/links/dates; do not persist unreviewed prose."""
+    if parser == "govinfo-fr-html":
+        return parse_govinfo_document(body, source_url)
     if parser == "json-feed":
         feed = json.loads(body.decode("utf-8"))
         if not isinstance(feed, dict) or not isinstance(feed.get("items"), list):
@@ -322,7 +447,7 @@ def run_tick(policy, state, now, output, fetch=fetch_source):
             elif status == 200:
                 if len(body) > policy["maxResponseBytes"]:
                     raise ValueError("Oversized response")
-                items = parse_feed(body, source["parser"], source.get("dateOnlyPublication", False))
+                items = parse_feed(body, source["parser"], source.get("dateOnlyPublication", False), source["url"])
                 if any(publication_after(item["publishedAt"], now) for item in items):
                     raise ValueError("Future publication date needs source-specific review")
                 source_hash = digest(body)
@@ -341,14 +466,16 @@ def run_tick(policy, state, now, output, fetch=fetch_source):
             # Only class names enter public state; server error text can expose request details.
             current.update(status="failed", error=type(error).__name__)
         sources_state[source["id"]] = current
-    # An initial approval binds both exact hashes. Later unrelated feed changes may
-    # retain that approval only while the identical item remains in a valid feed.
+    # Feed approvals initially bind both exact hashes. The explicit document
+    # binding instead matches the entire reviewed article text and link targets.
+    # Later unrelated feed changes retain approval only for the identical item.
     def matches(event, source):
         item = next((item for item in source.get("items", []) if item["itemHash"] == event["itemHash"]), None)
         exact = event["sourceHash"] == source.get("lastValidHash")
         approved_before = accepted.get(event["id"]) == digest(event)
-        matched = item and (exact or approved_before) and event["sourceUrl"] == item["url"] and publication(event["publishedAt"]) == item["publishedAt"] and instant(event["reviewedAt"]) <= now
-        if matched and exact and source.get("status") != "failed":
+        complete_document = event.get("reviewBinding") == DOCUMENT_REVIEW_BINDING
+        matched = item and (exact or approved_before or complete_document) and event["sourceUrl"] == item["url"] and publication(event["publishedAt"]) == item["publishedAt"] and instant(event["reviewedAt"]) <= now
+        if matched and (exact or complete_document) and source.get("status") != "failed":
             accepted[event["id"]] = digest(event)
         return bool(matched)
     for post, date in due:
@@ -422,7 +549,7 @@ def publication_envelope(policy, state, post):
             corrections.append({"eventId": reviewed["id"], "kind": reviewed["correction"]["kind"], "summary": reviewed["correction"]["summary"], "reviewedAt": stamp(instant(reviewed["reviewedAt"])), "sourceIds": [sid]})
         if reviewed["status"] not in PUBLIC_STATUSES:
             continue
-        events.append({"id": reviewed["id"], "title": reviewed["title"], "summary": reviewed["summary"], "occurredAt": publication(reviewed["occurredAt"])[:10], "publishedAt": source["publishedAt"], "status": reviewed["status"], "country": post["country"], "location": post["country"], "precision": "country", "roleIds": [role for role in reviewed["roleIds"] if role in post["roleIds"]], "sourceIds": [sid], "topic": reviewed["topic"]})
+        events.append({"id": reviewed["id"], "title": reviewed["title"], "summary": reviewed["summary"], "occurredAt": publication(reviewed["occurredAt"])[:10], "publishedAt": source["publishedAt"], "status": reviewed["status"], "country": post["country"], "location": post["country"], "precision": reviewed.get("precision", "country"), "roleIds": [role for role in reviewed["roleIds"] if role in post["roleIds"]], "sourceIds": [sid], "topic": reviewed["topic"]})
     published = max(instant(event["reviewedAt"]).date().isoformat() for event in previous["events"])
     content = {"events": events, "sources": sources, "corrections": corrections}
     edition = {"schemaVersion": 1, "id": "collector-" + digest(content)[:24], "postId": post["id"], "mode": "reviewed-public", "publishedAt": published, "events": events, "suggestions": []}
@@ -495,12 +622,14 @@ def inspect_feed(policy, path, source_id, item_url):
     body = path.read_bytes()
     if len(body) > policy["maxResponseBytes"]:
         raise ValueError("Complete feed exceeds the admitted size limit")
-    items = parse_feed(body, source["parser"], source.get("dateOnlyPublication", False))
+    items = parse_feed(body, source["parser"], source.get("dateOnlyPublication", False), source["url"])
     found = [item for item in items if item["url"] == item_url]
     if len(found) != 1:
         raise ValueError("Select an unambiguous complete source item")
     item = found[0]
-    if source["parser"] == "json-feed":
+    if source["parser"] == "govinfo-fr-html":
+        entry = body.decode("utf-8")
+    elif source["parser"] == "json-feed":
         entry = next(entry for entry in json.loads(body)["items"] if digest(entry) == item["itemHash"])
     else:
         root = ET.fromstring(body)

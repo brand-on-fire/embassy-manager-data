@@ -182,7 +182,7 @@ class PreflightTests(unittest.TestCase):
         (self.path / "dist/embassy-manager/index.html").write_text('<!doctype html><html><head><link rel="stylesheet" href="/embassy-manager/assets/app.css"></head><body><script src="/embassy-manager/assets/app.js"></script></body></html>')
         (self.path / "dist/embassy-manager/assets/app.js").write_text('document.title = "Embassy Manager";')
         (self.path / "dist/embassy-manager/assets/app.css").write_text('body { color: navy; }')
-        (self.path / "dist/_headers").write_text("/embassy-manager/*\n  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'\n  Referrer-Policy: no-referrer\n")
+        (self.path / "dist/_headers").write_text("/embassy-manager/*\n  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://raw.githubusercontent.com/brand-on-fire/embassy-manager-data/public-data/ https://embassy-public-ranking.wild-snowflake-1dd9.workers.dev/v2/desk/; font-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'\n  Referrer-Policy: no-referrer\n")
 
     def check(self, mode="--preview"):
         return subprocess.run(["node", str(self.path / "scripts/preflight.mjs"), mode], capture_output=True, text=True, check=False)

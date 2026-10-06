@@ -4,6 +4,14 @@ name: Collect reviewed public briefings
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect.yml'
+      - 'data/collection-*.json'
+      - 'scripts/collector.py'
+      - 'collector-template/publish.py'
+      - 'tests/test_collector*.py'
   schedule:
     - cron: '7,22,37,52 * * * *'
 
@@ -17,7 +25,7 @@ concurrency:
 jobs:
   collect:
     # Evaluated before runner allocation: wrong/private/unknown repositories never run.
-    if: github.event.repository.private == false && github.repository == 'brand-on-fire/embassy-manager-data' && github.event.repository.visibility == 'public' && vars.EMBASSY_COLLECTION_ENABLED == 'true'
+    if: github.event.repository.private == false && github.repository == 'brand-on-fire/embassy-manager-data' && github.event.repository.visibility == 'public' && github.ref == 'refs/heads/main' && vars.EMBASSY_COLLECTION_ENABLED == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
@@ -31,6 +39,7 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -p test_collector.py -k CollectorTests
           python3 -m unittest discover -s tests -p test_collector_publication.py
+          python3 -m unittest discover -s tests -p test_collector_documents.py
       - name: Restore bounded public collection state
         run: python3 collector-template/publish.py restore
       - name: Collect admitted sources and export reviewed editions
