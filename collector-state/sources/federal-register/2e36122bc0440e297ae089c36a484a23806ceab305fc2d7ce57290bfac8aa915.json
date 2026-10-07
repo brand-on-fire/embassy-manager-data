@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "itemHash": "d0b1b10c44c5a7b461c93cf62cc3d42572a476a31d9ead5c08985f03de654caf",
-      "publishedAt": "2026-06-16T17:31:00Z",
-      "url": "https://www.govinfo.gov/app/details/FR-2026-06-16"
-    },
-    {
       "itemHash": "b9cc041ecd66439c74491574414e06beb2ff3da17fa70f7690a6952aa50dddb1",
       "publishedAt": "2026-06-16T21:05:45Z",
       "url": "https://www.govinfo.gov/app/details/FR-2024-08-15"
@@ -266,11 +261,6 @@
       "url": "https://www.govinfo.gov/app/details/FR-2026-08-13"
     },
     {
-      "itemHash": "6f823193497dba701b4722677c32401b7e34e17ead7e78c57bbf23c9544688fb",
-      "publishedAt": "2026-08-15T20:25:00Z",
-      "url": "https://www.govinfo.gov/app/details/FR-2026-04-01"
-    },
-    {
       "itemHash": "1cceb7d22db4f7a2a1c4ed708e9e62a230b896bb4a465586727fce8cbb4d2410",
       "publishedAt": "2026-08-16T14:15:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2022-08-04"
@@ -491,11 +481,26 @@
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-02"
     },
     {
-      "itemHash": "b75487144ee222ce073aac79d5394844da75eca8ca2ac660d4af4d1dd051f8b8",
-      "publishedAt": "2026-10-05T18:14:00Z",
+      "itemHash": "1dc059163a0b0a9a90b9f60510e900bcdbc066e6d97a53b3625751aa4c224ef9",
+      "publishedAt": "2026-10-06T07:45:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-06"
+    },
+    {
+      "itemHash": "6a936fc4b295ecd0954b1355990b324304631dacb7c2544e8d91aae96e0e3ad9",
+      "publishedAt": "2026-10-06T14:34:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-05"
+    },
+    {
+      "itemHash": "060fa8829846aedef1e6b966aa357aaf79d848e535af816ddf16ec864dc27879",
+      "publishedAt": "2026-10-06T21:00:14Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-04-01"
+    },
+    {
+      "itemHash": "83eb0a2e024aa07ba546a15dd54cd90ebf7d11ee3d59c223d79cfd7825964eff",
+      "publishedAt": "2026-10-07T04:38:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-07"
     }
   ],
-  "sourceHash": "616302b65e5365e34f318bba667030e5d50231f28e3c8ec0153b70e0e144cf8f",
+  "sourceHash": "2e36122bc0440e297ae089c36a484a23806ceab305fc2d7ce57290bfac8aa915",
   "sourceId": "federal-register"
 }

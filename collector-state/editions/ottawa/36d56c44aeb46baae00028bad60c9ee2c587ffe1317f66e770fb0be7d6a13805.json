@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-07",
+  "events": [
+    {
+      "id": "north-american-trade-review-consultation-2026-10-05",
+      "itemHash": "fc03cc1ee7533585847fa8d70b715d3d05ffe0d26519eedc4eb4f934acadb736",
+      "occurredAt": "2026-10-05",
+      "postIds": [
+        "ottawa",
+        "mexico-city"
+      ],
+      "precision": "relevance",
+      "publishedAt": "2026-10-05",
+      "publisher": "Office of the United States Trade Representative / Government Publishing Office",
+      "reviewBinding": "complete-document-content-v1",
+      "reviewChecks": {
+        "acronymsChecked": true,
+        "completeInputReviewed": true,
+        "conflictsResolved": true,
+        "dateSemanticsChecked": true,
+        "personnelNamesRemoved": true,
+        "rightsChecked": true,
+        "roleRelevanceChecked": true
+      },
+      "reviewedAt": "2026-10-06T02:49:22.974145Z",
+      "reviewedByRole": "research-editor",
+      "roleIds": [
+        "ambassador",
+        "dcm",
+        "capital-americas-mexico-city-ambassador"
+      ],
+      "sourceHash": "d226df92e3855f7a3148b14dda7a92d75f75fb5f34f221473b4baf834ec05764",
+      "sourceId": "trade-review-2026-20341",
+      "sourceTitle": "Federal Register notice 2026-20341: North American trade agreement consultation",
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/FR-2026-10-05/html/2026-20341.htm",
+      "status": "announced",
+      "summary": "The Office of the United States Trade Representative announced consultation on operation of the United States-Mexico-Canada Agreement before its 2027 annual joint review. Written comments and hearing requests are due January 12, 2027, at 11:59 p.m. Eastern Standard Time. The hearing date and location will be announced separately.",
+      "supports": "Complete official document reviewed. The Federal Register header establishes publication on October 5, 2026; the October 2 filing timestamp is separate. The notice establishes a consultation and comment deadline, not a treaty amendment or new trade restriction. Canada and Mexico are relevance associations, not physical event locations. No later hearing notice was reviewed.",
+      "title": "Consultation opens before the 2027 North American trade review",
+      "topic": "Trade policy consultation"
+    }
+  ],
+  "generatedAt": "2026-10-07T16:40:57.304424Z",
+  "postId": "ottawa",
+  "schemaVersion": 1,
+  "warnings": []
+}
