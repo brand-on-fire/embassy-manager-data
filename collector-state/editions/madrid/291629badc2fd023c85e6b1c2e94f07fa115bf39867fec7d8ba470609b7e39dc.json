@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-08",
+  "events": [
+    {
+      "id": "methionine-final-sunset-review-2026-10-05",
+      "itemHash": "ecf6d170687bcbafcca868417c9ec7f31c23a6c3ccb5f0f440520cf2a1acee58",
+      "occurredAt": "2026-10-05",
+      "postIds": [
+        "paris",
+        "tokyo",
+        "madrid"
+      ],
+      "precision": "relevance",
+      "publishedAt": "2026-10-05",
+      "publisher": "Department of Commerce / Government Publishing Office",
+      "reviewBinding": "complete-document-content-v1",
+      "reviewChecks": {
+        "acronymsChecked": true,
+        "completeInputReviewed": true,
+        "conflictsResolved": true,
+        "dateSemanticsChecked": true,
+        "personnelNamesRemoved": true,
+        "rightsChecked": true,
+        "roleRelevanceChecked": true
+      },
+      "reviewedAt": "2026-10-06T05:32:26.624557Z",
+      "reviewedByRole": "research-editor",
+      "roleIds": [
+        "ambassador",
+        "dcm",
+        "capital-europe-paris-regional-senior-commercial-officer",
+        "capital-europe-paris-deputy-senior-commercial-officer",
+        "capital-europe-paris-commercial-specialist",
+        "capital-tokyo-ambassador",
+        "capital-chief-of-staff",
+        "capital-europe-madrid-commercial-counselor",
+        "capital-europe-madrid-commercial-attache"
+      ],
+      "sourceHash": "a55176388a13f0d66318bdb31c839ac275977bcfbaa28e94523fd96a4abcdcd7",
+      "sourceId": "methionine-review-2026-20384",
+      "sourceTitle": "Federal Register notice 2026-20384: Methionine antidumping review results",
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/FR-2026-10-05/html/2026-20384.htm",
+      "status": "announced",
+      "summary": "The Department of Commerce published final results of its first five-year reviews of existing methionine antidumping duty orders for France, Japan and Spain. It found that revoking the orders would likely lead to continued or recurring dumping. The notice states that the results apply from October 5, 2026.",
+      "supports": "The complete notice establishes publication and applicability on October 5, 2026 and final results concerning existing orders. Signature and filing dates are separate. The listed margins describe the dumping likely if orders were revoked, not new tariff or cash-deposit rates. Full product scope is referred to a memorandum not reviewed here. Conflicting June initiation-date references are omitted. France, Japan and Spain are explicit relevance associations, not event locations.",
+      "title": "Final methionine antidumping review results for France, Japan and Spain",
+      "topic": "Trade policy review"
+    }
+  ],
+  "generatedAt": "2026-10-08T07:57:49.133216Z",
+  "postId": "madrid",
+  "schemaVersion": 1,
+  "warnings": []
+}
