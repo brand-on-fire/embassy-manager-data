@@ -656,7 +656,7 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mwi.html"
     },
     {
-      "itemHash": "87c885a22617e37c0d0b5e80a6e17125787b16338543560611eb016c3a1cb6fc",
+      "itemHash": "e85ef1d1b49e07c2d9f067cd8a96137bddaa417377507dfebbf2f41483fd38db",
       "publishedAt": "2026-05-14",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.nic.html"
     },
@@ -1116,6 +1116,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
   ],
-  "sourceHash": "b28c13bbac0b249b3a7c9ffcb3dc25adaa96d00778f929bcd673228d122fd067",
+  "sourceHash": "2621fa66b825625f4175686c94a5b20b6b802ff5d43fcaa1fb3cdb076a6d038e",
   "sourceId": "travel-advisories"
 }
