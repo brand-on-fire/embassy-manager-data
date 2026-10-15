@@ -1006,6 +1006,11 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zaf.html"
     },
     {
+      "itemHash": "21f196fdf81804a551229613e2fc5748be47ebe8ad76b6416d76e26769c9d446",
+      "publishedAt": "2025-05-22",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vut.html"
+    },
+    {
       "itemHash": "361108c4b137dcc8b28dcc92b1a3982944765791e01b07725ffd943bfb9ff733",
       "publishedAt": "2025-05-22",
       "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/vanuatu-travel-advisory.html"
@@ -1021,14 +1026,24 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.deu.html"
     },
     {
-      "itemHash": "4fec5836d01183cb4bdb024b6093307d6656fa5703f12de413d280263981a5f4",
+      "itemHash": "4a98e6676e98d83ddb257269d11b0b8c7a9de6fdda355570d5f8c9ba5ea639bc",
       "publishedAt": "2025-05-07",
-      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cuba-travel-advisory.html"
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cub.html"
     },
     {
       "itemHash": "f17d851c495e98f63df1f9bb109a1403c29a350ad14e89be3fc574ceff36e7ed",
       "publishedAt": "2025-04-29",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bdi.html"
+    },
+    {
+      "itemHash": "56abb9167be74451adbf9be78a2ae0f45b998899d78921de1f48c0ef2d01b00b",
+      "publishedAt": "2025-04-29",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.png.html"
+    },
+    {
+      "itemHash": "6a6d41c43f593378177610e84876710c42de2162c55485ae4f8e6501c62419da",
+      "publishedAt": "2025-04-29",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.slb.html"
     },
     {
       "itemHash": "0f685d929191aef546d91fc0565eca1c68c3cfa1a067d379a9a3399a40290c7b",
@@ -1054,6 +1069,11 @@
       "itemHash": "51e0a83960c52adc164d42cd708763012ab440e4384e30c95b5fbb6aec90ab8a",
       "publishedAt": "2025-03-06",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dji.html"
+    },
+    {
+      "itemHash": "24174820dec01c61b47be312e8c6dcde26b8922bac5c541bdb47337a81454c1c",
+      "publishedAt": "2024-12-02",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ton.html"
     },
     {
       "itemHash": "cd2429d9c0775d7253003be34bb5486ef809d00778891ef40cd04373c2e7fb87",
@@ -1116,6 +1136,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
   ],
-  "sourceHash": "2621fa66b825625f4175686c94a5b20b6b802ff5d43fcaa1fb3cdb076a6d038e",
+  "sourceHash": "17ed71668a2d661f9248bb6e1d27c9583edc80c1db863cfcb8c0790f43e70fbc",
   "sourceId": "travel-advisories"
 }
