@@ -346,7 +346,7 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mng.html"
     },
     {
-      "itemHash": "b71a2d5af8307d776cbb37b73eff2b77e13dd2394cc4630a3b13556b5405d68d",
+      "itemHash": "b87bfea5267b9d705329c840d69aca655a3e30f8cc2bd70d0274c6c019a807e6",
       "publishedAt": "2026-07-28",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ken.html"
     },
@@ -1116,6 +1116,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
   ],
-  "sourceHash": "f1007ca66a5c3338aa6da42565d7fff5bfb4965998ed74d8fc89bc29428e9aaa",
+  "sourceHash": "67832f7b2cb8e4d7221174e5511c12043549d65aa5f9130da18e32e7c344df1d",
   "sourceId": "travel-advisories"
 }
