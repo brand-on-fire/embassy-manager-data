@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "itemHash": "9de853f43d4100b5fd1992250eff40f4e85f94ab956e0ec67b0db9f11ffa41df",
-      "publishedAt": "2026-06-24T00:25:00Z",
-      "url": "https://www.govinfo.gov/app/details/FR-2022-04-07"
-    },
-    {
       "itemHash": "c273ee8b616457c20b9b8eaa310d56bd9bb405f8d4f76921dd012829172ecd39",
       "publishedAt": "2026-06-24T18:46:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-06-24"
@@ -481,26 +476,26 @@
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-13"
     },
     {
-      "itemHash": "d605c8808e7b3126f14e7e0204215e3597b058a3e330972e89b0bd86e7ee4049",
-      "publishedAt": "2026-10-14T06:29:00Z",
-      "url": "https://www.govinfo.gov/app/details/FR-2026-10-14"
-    },
-    {
       "itemHash": "6fc9f9898e4e8f454f584afffca5b54f33a9b4411b76891014e3413fd736fd95",
       "publishedAt": "2026-10-15T14:27:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-15"
     },
     {
-      "itemHash": "129b2b7159ba85dd53d3da64ad8a5afe0d496d4df777fbb47a6b745f6309ac6d",
-      "publishedAt": "2026-10-16T20:09:00Z",
+      "itemHash": "1214c63ddae27f8d0378b463265cbebd03253d4bc4c67f0bf3db660ac8314131",
+      "publishedAt": "2026-10-19T16:33:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-16"
     },
     {
-      "itemHash": "a1556023661eed347d377642f835c4452bc1e5f417ddaae74a7b859fbbf79f6d",
-      "publishedAt": "2026-10-17T06:41:00Z",
+      "itemHash": "da5e6e5939a1cbaea9b4fbba8d10fb417e9bec3ecd96a46ac7b856cbd2cab210",
+      "publishedAt": "2026-10-19T21:24:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-14"
+    },
+    {
+      "itemHash": "31b65e006188faea5e93ea9d712fb07d32ecfd9977b195937bcd31eefc71a278",
+      "publishedAt": "2026-10-19T21:32:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-19"
     }
   ],
-  "sourceHash": "31725d16b10f91bef577182b5f5ceddd74082a9bef1ec0140042658e6217111b",
+  "sourceHash": "9eb12e7b7f6ee7ef6faaffb3652bc7618fb977c185870bde5b51af6722d3f7a9",
   "sourceId": "federal-register"
 }
