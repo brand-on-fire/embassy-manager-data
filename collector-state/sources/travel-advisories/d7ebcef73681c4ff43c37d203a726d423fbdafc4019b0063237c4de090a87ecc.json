@@ -1,14 +1,19 @@
 {
   "items": [
     {
-      "itemHash": "c7bc0dade98eebe0505e7b1db9c88094b1ad84fe1a00a6231969951baad97b29",
-      "publishedAt": "2026-10-19",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ken.html"
+      "itemHash": "fb8c430df17b9d5591b2755e17d53401bad04abc47f891dd6cf26d140b63d11f",
+      "publishedAt": "2026-10-21",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.fra.html"
     },
     {
       "itemHash": "459480b069a403a4f6b9aea26a42400c92ddda8e5ba7009c59d5afb7e0772842",
       "publishedAt": "2026-10-19",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.chn.html"
+    },
+    {
+      "itemHash": "c7bc0dade98eebe0505e7b1db9c88094b1ad84fe1a00a6231969951baad97b29",
+      "publishedAt": "2026-10-19",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ken.html"
     },
     {
       "itemHash": "38f01a5e9ff612af36596bf43585458177bbc27f81e572e576b0a47a82965fa4",
@@ -416,11 +421,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.fsm.html"
     },
     {
-      "itemHash": "ce2f8c5712f415bac151b756d25d3877b0ba836704d4fe4b760ab9405bb3bf4a",
-      "publishedAt": "2026-07-07",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kn.html"
-    },
-    {
       "itemHash": "1b463dc5f67e85aff8c34145b573a866bf95a74376b86b9e6b2bf269b90647bb",
       "publishedAt": "2026-07-07",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vct.html"
@@ -456,14 +456,14 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.msr.html"
     },
     {
+      "itemHash": "8de7ec472b589e23970509a834a789c4c2c30c7e29149d63374bb97895c395fe",
+      "publishedAt": "2026-07-07",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kna.html"
+    },
+    {
       "itemHash": "1709b8d9d43b73d559928e3b6155051933947d21c6b9b3351f3fc20a78c4fab3",
       "publishedAt": "2026-07-07",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tha.html"
-    },
-    {
-      "itemHash": "e7515c6537ab6eb6aea51aba23b97cc8a604fe7a69a07347429e7817c92e9dd7",
-      "publishedAt": "2026-07-07",
-      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-kitts-and-nevis-travel-advisory.html"
     },
     {
       "itemHash": "5e516c0786313cff3ce6b4cc2b26f293c615e53c2ad735547f99ff32992e830e",
@@ -986,11 +986,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.pol.html"
     },
     {
-      "itemHash": "b4cac772e61d6397e934a398f814a6d82b1f60a9c2af79250eb750e82fa17ef9",
-      "publishedAt": "2025-05-28",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.fra.html"
-    },
-    {
       "itemHash": "2de3e4c2384ae7e3ae07165a2f030c828d334a15fc800f8becae5225fe11f1ff",
       "publishedAt": "2025-05-28",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kor.html"
@@ -1116,6 +1111,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
   ],
-  "sourceHash": "2f50619713ee495e15a862e5797fdb51727dcb71bfb38cbffadeae9d4a9f0fee",
+  "sourceHash": "d7ebcef73681c4ff43c37d203a726d423fbdafc4019b0063237c4de090a87ecc",
   "sourceId": "travel-advisories"
 }
