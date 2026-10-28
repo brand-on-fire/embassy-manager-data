@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "itemHash": "b85a7bf3586d5b045b39b11085181ed768aca876d2ab237a75dd5db461e4d96b",
-      "publishedAt": "2026-10-26",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xwb.html"
-    },
-    {
       "itemHash": "d911f15a11c6d4eb544f42355ef5ed34d89095afbe3d9b65b0064f9123d9b044",
       "publishedAt": "2026-10-23",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irq.html"
@@ -204,6 +199,11 @@
       "itemHash": "a483d026d2efb2ed106d17411b9beadd0288fe6174cc847f797c23fe828bd1b4",
       "publishedAt": "2026-08-26",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xgz.html"
+    },
+    {
+      "itemHash": "f797250a46fdf34c46e536595554ff179adf78860fa316c3babe7aa9bbb6193c",
+      "publishedAt": "2026-08-26",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xwb.html"
     },
     {
       "itemHash": "e15243f2f2b5f54f62f6f0096cc316dbff990ba9fe80177c739c656c30a988c5",
@@ -1091,6 +1091,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
   ],
-  "sourceHash": "1f5989d5a1c97c625ab675df64fa11df4cabc6a599124c4b1f3e978d8ed15db8",
+  "sourceHash": "ede66e2218e5c93b921edc96d96fbd5013ac4dc74d66bcc21c5ba2b5c6279382",
   "sourceId": "travel-advisories"
 }
