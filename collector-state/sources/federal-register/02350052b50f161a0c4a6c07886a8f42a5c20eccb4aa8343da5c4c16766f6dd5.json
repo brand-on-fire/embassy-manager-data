@@ -491,11 +491,16 @@
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-28"
     },
     {
-      "itemHash": "c2102efcd05616be7c6562fc7598861bfdff6107a79c655bedb56b0523798101",
+      "itemHash": "6ab917b1fea1318f058dc3eca3bf8fa3d898dfbba7002837a596cc2855474375",
       "publishedAt": "2026-10-28T15:53:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-10-27"
+    },
+    {
+      "itemHash": "296a668e33f0b02a47dfe2d1d1b132be2e11dd917a1d6e7b29dd49d167a38d45",
+      "publishedAt": "2026-10-29T06:52:00Z",
+      "url": "https://www.govinfo.gov/app/details/FR-2026-10-29"
     }
   ],
-  "sourceHash": "2e6b486bae2423b1ace57816b3d999069b849d1253924c157861e29e177a7335",
+  "sourceHash": "02350052b50f161a0c4a6c07886a8f42a5c20eccb4aa8343da5c4c16766f6dd5",
   "sourceId": "federal-register"
 }
