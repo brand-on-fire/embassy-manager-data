@@ -491,11 +491,11 @@
       "url": "https://www.govinfo.gov/app/details/FR-2026-11-06"
     },
     {
-      "itemHash": "b6821c85aca1c5a8c12ea2d971a012a1fb5325b6c7cce9cd96ca3b14376a2632",
-      "publishedAt": "2026-11-10T00:57:00Z",
+      "itemHash": "7ceea018adc79beab0cfa1c29743761047c2c2292e98a6ec8b940aa24036787d",
+      "publishedAt": "2026-11-10T09:21:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-11-09"
     }
   ],
-  "sourceHash": "74247c605d4605b59028aa31f121604f42d9f8ad50749bb60fcf446f2b81e113",
+  "sourceHash": "ec819d34fd75cbe17510f1b03eb93e7721281f054f81b6050ef221893ed3bb2a",
   "sourceId": "federal-register"
 }
