@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "itemHash": "d6a58caec0a193b9d0dc172da2b879cb8aaa5ca5b3ae9dc36f27a85aa87aa04e",
-      "publishedAt": "2026-07-17T16:00:00Z",
-      "url": "https://www.govinfo.gov/app/details/FR-2026-07-17"
-    },
-    {
       "itemHash": "c72c5eeb1697dc24fad2a8c6bd79ba2b8aec48174cb7ab212085babdcf1d684a",
       "publishedAt": "2026-07-19T15:10:02Z",
       "url": "https://www.govinfo.gov/app/details/FR-2024-02-05"
@@ -496,11 +491,11 @@
       "url": "https://www.govinfo.gov/app/details/FR-2026-11-09"
     },
     {
-      "itemHash": "ed59bb733f8140843080013679bf1e4e9567fb75e07014b0d6404364174ba551",
-      "publishedAt": "2026-11-10T11:52:00Z",
+      "itemHash": "7d0aa6a504f49465746b5b311de4b82b6e7695b859a4ec4a4e834b4bb848d1f2",
+      "publishedAt": "2026-11-10T20:04:00Z",
       "url": "https://www.govinfo.gov/app/details/FR-2026-11-10"
     }
   ],
-  "sourceHash": "a4158d3f28393c51745617477add8036566b15b492a4eccb900d7dcbc7c24f18",
+  "sourceHash": "d6fa46a5afcb2089a56ccbb017c1452c6fa6d595f2dfbbac82425207c9fefe13",
   "sourceId": "federal-register"
 }
