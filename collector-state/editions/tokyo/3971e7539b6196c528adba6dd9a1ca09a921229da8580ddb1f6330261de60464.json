@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "events": [
     {
       "id": "japan-travel-advisory-2025-05-15",
@@ -82,7 +82,7 @@
       "topic": "Trade policy review"
     }
   ],
-  "generatedAt": "2026-11-12T23:51:40.010904Z",
+  "generatedAt": "2026-11-14T00:52:39.692899Z",
   "postId": "tokyo",
   "schemaVersion": 1,
   "warnings": []
