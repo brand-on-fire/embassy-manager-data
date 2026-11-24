@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "itemHash": "b469fa78beaf51a548fa1671fc03acbe0812b06dc6ae819b5be8c48909222fa0",
+      "publishedAt": "2026-11-23",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dnk.html"
+    },
+    {
+      "itemHash": "b2f9c2c49a914169a31e7d1969d98749a91fce61c9c3b9b6aab53c90b285ba5e",
+      "publishedAt": "2026-11-23",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.grl.html"
+    },
+    {
       "itemHash": "c931bfe08a8d663f0ccd14bb7cad322bd2455aa7879bf1358b4b05120335d271",
       "publishedAt": "2026-10-23",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irn.html"
@@ -1056,19 +1066,9 @@
       "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tonga-travel-advisory.html"
     },
     {
-      "itemHash": "a361ec2d62da07860c6c490b6b8ad37c609db242eaba028bfc499fb1df996c40",
-      "publishedAt": "2024-10-29",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.grl.html"
-    },
-    {
       "itemHash": "388d3560d6a63cbde5eb556a0ee17d535a7fb90b8cbb1cefdf70400f6c45ce1f",
       "publishedAt": "2024-10-02",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cog.html"
-    },
-    {
-      "itemHash": "ec065def05d7b98962289519b99b91e9880d45619b6f328ff6966ec0de0456af",
-      "publishedAt": "2024-09-17",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dnk.html"
     },
     {
       "itemHash": "91528f45a77cd01ea9126ac6a7f13641d68cf549f1c73c49b92a235c5d6fb481",
@@ -1091,6 +1091,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
   ],
-  "sourceHash": "04d6e7ef9116af4e2ef428a22c6aff7b82b79e932c961d04a9a855541c405ea8",
+  "sourceHash": "eea99959342e1b29ea2736f6cbc2de03784df590987c1500b665d56415ed5da2",
   "sourceId": "travel-advisories"
 }
