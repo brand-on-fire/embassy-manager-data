@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "itemHash": "d5964ea6e82d1c502ad9dd4d4437b32b155c60904613b954e28595de3de6ac2e",
+      "publishedAt": "2026-11-24",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.afg.html"
+    },
+    {
+      "itemHash": "d6b18683b53ea31f89e51079a58b5e48986b6ea31906535cfed903efe253810a",
+      "publishedAt": "2026-11-24",
+      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.egy.html"
+    },
+    {
       "itemHash": "b469fa78beaf51a548fa1671fc03acbe0812b06dc6ae819b5be8c48909222fa0",
       "publishedAt": "2026-11-23",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dnk.html"
@@ -536,7 +546,7 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.can.html"
     },
     {
-      "itemHash": "723a083b22968c5847c67f439e1674bcbb369a59b6043a6b355a056675ebde3c",
+      "itemHash": "5ad9d77a975aad57795292409bf730b6865303c5f7ff0ce4dfe282293ecbaf7a",
       "publishedAt": "2026-06-04",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.uga.html"
     },
@@ -791,11 +801,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mys.html"
     },
     {
-      "itemHash": "10e3f4a274eb13509a64b9e7c0812f12182c84bc4d2f2091a5864afc04d4be44",
-      "publishedAt": "2026-02-20",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.afg.html"
-    },
-    {
       "itemHash": "7e2deb57675bafb92664b509a51f2ab43f3301569fe57dcfad5228c41e8a8667",
       "publishedAt": "2026-02-18",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.civ.html"
@@ -951,11 +956,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.arm.html"
     },
     {
-      "itemHash": "c0328cc3b8714fd03fb7309eebf4caa70e614ecc7e5cbe6b56b8449a83047282",
-      "publishedAt": "2025-07-15",
-      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.egy.html"
-    },
-    {
       "itemHash": "461c17a28e179cf329c765a8ca66a5d8a9ae7e77429a16bcf83a0e5d5d420449",
       "publishedAt": "2025-06-16",
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ind.html"
@@ -1091,6 +1091,6 @@
       "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
   ],
-  "sourceHash": "eea99959342e1b29ea2736f6cbc2de03784df590987c1500b665d56415ed5da2",
+  "sourceHash": "06de4b633519d3dce3378cf5cdac328ca590f96838dd5e22e41cf80307008cb6",
   "sourceId": "travel-advisories"
 }
